@@ -1,0 +1,608 @@
+            /* ALL */
+
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            :root {
+                --darkNavy: #0F172A;
+                --cyan: #06B6D4;
+                --white: #e2e1df;
+                --SlateGray: #94A3B8;
+                --fifth-color: #0964dbb2;
+                --hover-color: #0088a9;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            /* HEADER */
+
+
+            header {
+                position: fixed;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: min(30px, 90%);
+                font-size: min(1.5vw, 20px);
+                height: 10vh;
+                top: 0;
+                left: 0;
+                text-transform: uppercase;
+                background-color: var(--darkNavy);
+                z-index: 100;
+                user-select: none;
+            }
+            /*  NAV BAR  */
+
+            header > #nav-text {
+                color: #fff;
+                font-family: "Monsterrat", sans-serif;
+                text-shadow: 2px -2px 5px black;
+                font-size: 1.75em;
+            }
+            nav {
+                position: relative;
+            }
+            nav > ul > li > a {
+                position: relative;
+            }
+            nav > ul > li > a {
+                color: rgba(255, 255, 255, 0.804);
+                font-family: "Monsterrat", sans-serif;
+                text-decoration: none;
+                font-weight: 600;
+                text-shadow: 2px -2px 5px black;
+            }
+            nav li a:hover {
+                color: var(--cyan);
+            }
+            nav ul li a.hoverable::after {
+                content: '';
+                position: absolute;
+                bottom: -7px;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                border-radius: 100px;
+                background-color: var(--cyan);
+                transition: 0.25s ease-in-out;
+                transform: scaleX(0);
+            }
+            nav ul li a.hoverable:hover::after {
+                transform: scaleX(1);
+            }
+            nav ul li {
+                display: inline-block;
+                padding: 0px 30px;
+                z-index: 1;
+            }
+            nav ul {
+                list-style-type: none;
+            }
+            nav ul li a span#contact {
+                background-color: var(--SlateGray);
+                padding: 0.7em;
+                border-radius: 25px;
+                text-decoration: none;
+                transition: 0.25s ease-in-out;
+                text-shadow: 1px 2px 2px black;
+            }
+            span#contact:hover {
+                background-color: #ffffffcb;
+                color: var(--cyan);
+                text-shadow: none;
+                text-shadow: 1px 2px 2px black;
+            }
+
+
+            /* HOMEPAGE */
+
+            .scroll-fx {
+                scroll-snap-type: y proximity;
+                overflow-y: scroll;
+                height: 100vh;
+            }
+            section {
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+            }
+
+            section#home {
+                display: grid;
+                grid-auto-columns: 1fr;
+                grid-auto-rows: 1fr;
+                grid-template-areas: 
+                "box0 box0 box0"
+                "box1 box1 box2"
+                "box3 box3 box3";
+                gap: 2em;
+                height: 100vh;
+                width: 100%;
+                background: var(--white);
+            }
+
+            /* IMAGE AND INTRODUCTION */
+
+            section .homepage{
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 1em;
+                justify-content: space-evenly;
+            }
+
+            /* HOMEPAGE 0 */
+
+            .homepage#homepage0 {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                flex-direction: column;
+                
+            }
+            #homepage0 h1 {
+                font-size: clamp(1.75rem, 4vw, 3.75rem);
+                font-family:Arial, Helvetica, sans-serif;
+
+            }
+
+            /* HOMEPAGE 1 */
+
+            .homepage#homepage1 > img {
+                width: clamp(9em, 10vw, 12em);
+                border: 2px solid black;
+                border-radius: 30%;
+            }   
+            .homepage#homepage1 > p {
+                font-size: clamp(0.5em, 1.5vw, 1.5em);
+                font-family: "Monsterrat", sans-serif;
+                color: var(--darkNavy);
+                margin-left: 1em;
+                width: min(40vw, 40rem);
+                text-align: left;
+            }
+
+            /* OVERVIEW */
+
+            .homepage#homepage2 {
+                margin-right: 1em;
+            }
+            .homepage#homepage2 > .overview {
+                display: flex;
+                flex-direction: column;
+                width: clamp(18em, 30%, 20em);
+                height: clamp(10em, 30%, 15em);
+                border: 1px solid black;
+                border-radius: 20px;
+                box-shadow: 2px 2px 5px black;
+            }
+            .overview > h2 {
+                font-size: clamp(12px, 3vw, 26px);
+                font-family: "Monsterrat", sans-serif;
+                color: var(--darkNavy);
+                font-weight: 600;
+                text-align: center;
+                text-transform: uppercase;
+                margin-top: 0.5em;
+            }
+            .overview > p {
+                font-size: clamp(8px, 2.3vw, 14px);
+                font-family: "Monsterrat", sans-serif;
+                color: var(--darkNavy);
+                margin-top: 1em;
+                text-align: center;
+                align-self: flex-end;
+            }
+            span#tech::before {
+                content: '';
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-image: url(imgs/icons/troubleshooting.png);
+                background-size: contain;
+                vertical-align: middle;
+            }
+            span#streamer::before {
+                content: '';
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-image: url(imgs/icons/streamer.png);
+                background-size: contain;
+                vertical-align: middle;
+            }
+            span#editor::before {
+                content: '';
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-image: url(imgs/icons/video-editor.png);
+                background-size: contain;
+                vertical-align: middle;
+            }
+            span#gamer::before {
+                content: '';
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-image: url(imgs/icons/gamer.png);
+                background-size: contain;
+                vertical-align: middle;
+            }
+
+            /* BUTTONS */
+
+            .overview > a.homepage-btn {
+                display: inline-block;
+                width: max-content;
+                font-size: clamp(8px, 1vw, 16px);
+                padding: 0.5em 1.25em;
+                background-color: var(--cyan);
+                color: var(--white);
+                font-family: "Monsterrat", sans-serif;
+                text-decoration: none;
+                border-radius: 25px;
+                align-self: center;
+                margin-top: 1em;
+                transition: 0.25s ease-in-out;
+                cursor: pointer;
+            }
+            #viewmywork {
+                display: none;
+                position: fixed;
+                background-color: transparent;
+                border: 2px solid black;
+                border-radius: 15px;
+                backdrop-filter: blur(5px);
+                width: 50%;
+                height: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            #viewmywork:target{
+                display: flex;
+            }
+            #viewmywork > a#hide-div{
+                position: absolute;
+                top: 0.5em;
+                right: 0.5em;
+                font-size: 1.5em;
+                color: black;
+                text-decoration: none;
+                font-weight: bold;
+                z-index: 1;
+            }
+            #viewmywork > a > img {
+                width: clamp(18px, 4vw, 34px);
+                height: clamp(18px, 4vw, 34px);
+            }
+
+            /* HOMEPAGE 3 */
+
+            .homepage#homepage3 > p {
+                font-size: clamp(0.25rem, 1rem, 2vw);
+                font-family: "Monsterrat", sans-serif;
+                color: var(--darkNavy);
+                width: min(40vw, 40rem);
+                text-align: center;
+            }
+
+            /* ABOUT PAGE */
+
+            section#about {
+                display: grid;
+                grid-auto-columns: 1fr;
+                grid-auto-rows: 1fr;
+                grid-template-areas: 
+                "box0 box0 box0 box0"
+                "box1 box1 box2 box2"
+                "box1 box1 box2 box2"
+                "box3 box3 box4 box4";
+                width: 100%;
+                height: 100vh;
+                gap: 1em;
+                background-color: var(--white);
+            }
+
+            /* ABOUT PAGE - BOX 1 */
+
+            section#about > #abt-box1 {
+                display: flex;
+            }
+            #abt-box1 > h1 {
+                margin-top: auto;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 1em;
+                font-family: "Monsterrat", sans-serif;
+                font-size: clamp(1.25rem, 2.3vw, 3rem);
+            }
+
+            /* ABOUT PAGE - BOX 2 */
+
+            #abt-box2 > .hobbies {
+                display: flex;
+                justify-self: center;
+                flex-direction: column;
+                border: 1px solid black;
+                width: 85%;
+                height: 90%;
+            }
+            .hobbies > h2 {
+                font-family: "Monsterrat", sans-serif;
+                font-size: clamp(0.5rem, 1.3vw, 1.75rem);
+                text-align: center;
+                margin-top: 0.5em;
+            }
+            .hobbies ul {
+                font-size: clamp(0.5em, 1.25vw, 1.75em);
+                line-height: 1.5em;
+                margin-left: 5em;
+                margin-top: 2em;
+            }
+
+            /* ABOUT PAGE - BOX 3 */
+
+            #abt-box3 > .games {
+                display: flex;
+                justify-self: center;
+                flex-direction: column;
+                border: 1px solid black;
+                width: 85%;
+                height: 90%;
+            }
+            .games > h2 {
+                font-family: "Monsterrat", sans-serif;
+                font-size: clamp(0.5rem, 1.3vw, 1.75rem);
+                text-align: center;
+                margin-top: 0.5em;
+            }
+            .li-games {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.3em;
+                margin-top: 1.5em;
+                margin-left: 15px;
+            }
+            .game {
+                width: clamp(min(4%, 5vw), max(15.5%, 5vw), 200px);
+                border-radius: 10px;
+                object-position: contain;
+                aspect-ratio: 1/1;
+            }
+
+
+            /* ABOUT PAGE - BOX 4 */
+
+            #abt-box4 > .values {
+                display: flex;
+                justify-self: center;
+                flex-direction: column;
+                border: 1px solid black;
+                width: 85%;
+                height: 90%;
+                text-align: center;
+            }
+            .values > h2 {
+                font-family: "Monsterrat", sans-serif;
+                font-size: clamp(0.25rem, 1vw, 1.75rem);
+                margin-top: 0.5em;
+            }
+            .values #val {
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+            .values p{
+                font-size: clamp(min(10%, 2vw), max(50%, 2vw), 18px);
+            }
+
+            /* ABOUT PAGE - BOX 5 */
+            
+            #abt-box5 > .recog {
+                display: flex;
+                justify-self: center;
+                flex-direction: column;
+                border: 1px solid black;
+                width: 85%;
+                height: 90%;
+                text-align: center;
+            }
+            .recog > h2 {
+                font-family: "Monsterrat", sans-serif;
+                font-size: clamp(0.25rem, 1vw, 1.75rem);
+                margin-top: 0.5em;
+            }
+            .cert-img {
+                width: clamp(min(4%, 5vw), max(17%, 5vw), 250px);
+                border-radius: 10px;
+                object-position: contain;
+                aspect-ratio: 1/1;
+                margin-top: 1em;
+            }
+
+            /* SKILLS PAGE  */
+            
+            section#skills {
+                display: grid;
+                grid-auto-columns: 1fr;
+                grid-auto-rows: 1fr;
+                grid-template-areas: 
+                "box0 box0 box0"
+                "box1 box2 box3"
+                "box1 box2 box3"
+                "box1 box2 box3";
+                gap: 2em;
+                height: 100vh;
+                width: 100%;
+                background: var(--white);
+            }
+
+            /* SKILLS */
+
+            section#skills > .skills {
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: flex-start;
+                flex-direction: column;
+                
+                gap: 3em;
+            }
+
+            .phrase {
+                position: absolute;
+                bottom: 0;
+                font-size: clamp(min(30%, 2vw), max(50%, 2vw), 26px);
+            }
+
+            /* CREATIVITY */
+
+            .creativity {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                border: 1px solid black;
+                width: 80%;
+                height: 50%;
+                margin-left: 2.5em;
+                border-radius: 20px;
+            }
+            .creativity .skill1-icon {
+                width: clamp(min(4%, 5vw), max(33%, 5vw), 200px);
+                border-radius: 10px;
+                object-position: cover;
+                aspect-ratio: 1/1;
+                margin-top: 1em;
+            }
+            #skls-box1 > h2 {
+                font-family: "Monsterrat", sans-serif;
+                font-size: clamp(0.75em, 1.3vw, 1.75rem);
+                text-transform: uppercase;
+                margin-left: 2.5em;
+                margin-top: 2em;
+            }
+
+            /* PRODUCTIVITY */
+
+            .productivity {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid black;
+                width: 80%;
+                height: 50%;
+                border-radius: 20px;
+            }
+            #skls-box2 > h2 {
+                font-family: "Monsterrat", sans-serif;
+                font-size: clamp(0.75em, 1.3vw, 1.75rem);
+                text-transform: uppercase;
+                margin-top: 2em;
+            }
+            .skill2-icon {
+                width: clamp(min(4%, 5vw), max(35%, 5vw), 200px);
+                border-radius: 10px;
+                object-position: cover;
+                aspect-ratio: 1/1;
+                margin-top: 1em;
+            }
+
+            /* TECH STACK */
+
+            .techstack {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid black;
+                width: 80%;
+                height: 50%;
+                margin-right: 3em;
+                border-radius: 20px;
+            }
+            #skls-box3 > h2 {
+                font-family: "Monsterrat", sans-serif;
+                font-size: clamp(0.75em, 1.3vw, 1.75rem);
+                text-transform: uppercase;
+                margin-right: 3em;
+                margin-top: 2em;
+            }
+            .skill3-icon {
+                width: clamp(min(4%, 5vw), max(30%, 5vw), 200px);
+                border-radius: 10px;
+                object-position: cover;
+                aspect-ratio: 1/1;
+                margin-top: 1em;
+            }
+
+            /* CONTACT */
+
+            #contactPage{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 150px;
+                background-color: white;
+            }
+            .contact {
+                display: flex;
+                position: relative;
+                width: 100%;
+                margin: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .contact h2{
+                position: absolute;
+                top: -2.5em;
+                left: 0;
+                color: red;
+                font-size: clamp(min(8%, 4vw), max(40%, 4vw), 24px);
+            }
+            .contact #location {
+                position: absolute;
+                left: 0;
+                top: -3.5em;
+                font-size: clamp(min(8%, 1.5vw), max(40%, 1.5vw), 10px);
+            }
+            .contact hr{
+                width: clamp(min(20%, 1vw), max(50%, 3vw), 20em);
+                height: 3px;
+                color: black;
+            }
+            /* SOCIAL MEDIAS */
+            .soc{
+                position: absolute;
+                display: flex;
+                gap: 2em;
+                top: 0.5em;
+                width: 50%;
+                height: 3.9em;
+            }
+            .soc-list {
+                width: clamp(2em, 5vw, 3em);
+                height: clamp(2em, 5vw, 3em);
+                object-fit: contain;
+            }
+
+            /* RIGHT SIDE */
+
+            .contact #email {
+                position: absolute;
+                right: 0;
+                top: 0;
+                text-align: right;
+                font-size: clamp(min(8%, 1.5vw), max(40%, 1.5vw), 16px);
+            }
+
